@@ -1,0 +1,77 @@
+### ================================
+### BASE URL
+@baseUrl = http://localhost:3000
+
+### ================================
+### 1. REGISTER ADMIN
+POST {{baseUrl}}/api/admin/register
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
+
+###
+
+### ================================
+### 2. LOGIN ADMIN
+POST {{baseUrl}}/api/admin/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
+
+###
+
+### ================================
+### 3. GET SEMUA ASPIRASI (DASHBOARD)
+GET {{baseUrl}}/api/aspirasi
+Authorization: YOUR_TOKEN_HERE
+
+###
+
+### ================================
+### 4. INPUT ASPIRASI (SISWA)
+POST {{baseUrl}}/api/aspirasi
+Content-Type: application/json
+
+{
+  "nis": 12345,
+  "id_kategori": 1,
+  "lokasi": "Kelas 10",
+  "ket": "Kursi rusak"
+}
+
+###
+
+### ================================
+### 5. HISTORY SISWA
+GET {{baseUrl}}/api/aspirasi/history/12345
+
+###
+
+### ================================
+### 6. UPDATE STATUS + FEEDBACK (ADMIN)
+PUT {{baseUrl}}/api/aspirasi/1
+Content-Type: application/json
+Authorization: YOUR_TOKEN_HERE
+
+{
+  "status": "Proses",
+  "feedback": "Sedang diperbaiki"
+}
+
+###
+
+### ================================
+### 7. GET KATEGORI
+POST http://localhost:3000/api/admin/register
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
